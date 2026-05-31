@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Work Sans, sans-serif;
-    background: #f5f5f5;
+    background: #f5f5f5;   
+  }
+
+   input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
   }
 `;
