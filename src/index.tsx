@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { GlobalStyle } from "./styles/GlobalStyles.ts";
+import { Analytics } from "@vercel/analytics/react";
 import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
@@ -8,5 +9,6 @@ createRoot(document.getElementById("root")!).render(
     <GlobalStyle />
 
     <App />
+    <Analytics />
   </StrictMode>,
 );
