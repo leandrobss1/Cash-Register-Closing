@@ -8,7 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: Work Sans, sans-serif;
+    font-family: Protest Riot, sans-serif;
+    font-weight: 300;
     background: #f5f5f5;   
   }
 

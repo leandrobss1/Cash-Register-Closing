@@ -1,4 +1,5 @@
 import { caixa } from "../../data/consumo";
+import { handleClick, handleChange } from "../../services/calculator";
 import "./styles.css";
 
 export default function Main() {
@@ -12,9 +13,16 @@ export default function Main() {
               currency: "BRL",
             })}
           </label>
-          <input type="number" min={0} max={50}></input>
+
+          <input
+            className="value-input"
+            type="number"
+            onChange={(event) => handleChange(event, index)}
+          />
         </div>
       ))}
+
+      <button onClick={handleClick}>CALCULAR</button>
     </div>
   );
 }
