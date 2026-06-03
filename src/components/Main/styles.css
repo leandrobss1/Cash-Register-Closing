@@ -4,11 +4,16 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  width: fit-content;
+  width: 100%;
+  max-width: 794px;
   margin: 0 auto;
   background-color: #f8f7ff;
   padding: 1.5rem;
   border-radius: 12px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .container-values {
@@ -69,6 +74,13 @@ button:hover {
   background: #f0eeff;
 }
 
+.button-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 .button-calc {
   background: #534ab7;
   color: white;
@@ -91,4 +103,5 @@ button:hover {
   border-radius: 8px;
   border: 0.5px solid #e0ddf7;
   width: fit-content;
+  margin-top: 1rem;
 }
