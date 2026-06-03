@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { caixa } from "../../data/consumo";
-import { handleClick, handleChange } from "../../services/calculator";
+import {
+  handleClick,
+  handleChange,
+  handleClear,
+} from "../../services/calculator";
 import "./styles.css";
 
 export default function Main() {
+  const [total, setTotal] = useState(0);
   return (
     <div className="container-main">
       {caixa.map((item, index) => (
@@ -22,7 +28,17 @@ export default function Main() {
         </div>
       ))}
 
-      <button onClick={handleClick}>CALCULAR</button>
+      <button className="button-calc" onClick={() => handleClick(setTotal)}>
+        CALCULAR
+      </button>
+      <button className="trigger-button" onClick={() => handleClear(setTotal)}>
+        REFAZER
+      </button>
+
+      <p className="totalCount">
+        Total: {""}
+        {total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+      </p>
     </div>
   );
 }
