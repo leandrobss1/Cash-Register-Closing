@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: Protest Riot, sans-serif;
     font-weight: 300;
-    background: #fcf9f7;   
   }
 
    input[type="number"]::-webkit-inner-spin-button,
