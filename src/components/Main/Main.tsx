@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { caixa } from "../../data/consumo";
 import {
   handleClick,
@@ -6,26 +6,11 @@ import {
   handleClear,
 } from "../../services/calculator";
 import "./styles.css";
-import html2canvas from "html2canvas";
-import { useRef } from "react";
+import { Link } from "react-router";
+import { exportElementAsImage } from "../../utils/exportImage";
 
 export default function Main() {
   const pageRef = useRef<HTMLDivElement>(null);
-
-  async function handleDownload() {
-    if (!pageRef.current) return;
-
-    const canvas = await html2canvas(pageRef.current, {
-      scale: 2,
-      windowWidth: 794,
-    });
-    const image = canvas.toDataURL("image/png");
-
-    const link = document.createElement("a");
-    link.href = image;
-    link.download = `fechamento-${new Date().toLocaleDateString("pt-BR")}.png`;
-    link.click();
-  }
 
   const [total, setTotal] = useState(0);
   return (
@@ -57,7 +42,21 @@ export default function Main() {
         >
           LIMPAR
         </button>
-        <button onClick={handleDownload}>SALVAR</button>
+        <button
+          onClick={() => {
+            if (!pageRef.current) return;
+
+            exportElementAsImage(
+              pageRef.current,
+              `fechamento-${new Date().toLocaleDateString("pt-BR")}.png`,
+            );
+          }}
+        >
+          SALVAR
+        </button>
+        <Link to="/">
+          <button>RETORNAR</button>
+        </Link>
       </div>
       <p className="totalCount">
         Total: {""}
