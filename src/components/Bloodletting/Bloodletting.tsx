@@ -12,15 +12,18 @@ export default function Bloodletting() {
   return (
     <div className="container-blood" ref={pageRef}>
       <h1>Sangria de Caixa</h1>
-      <div className="container-values">
-        <label>VALOR NO CAIXA</label>
-        <input className="value-input" type="number" />
-      </div>
-      <div className="container-values">
-        <label>VALOR DA SANGRIA</label>
-        <input className="value-input" type="number" />
-      </div>
 
+      <div className="container-valuess">
+        <div className="field">
+          <label>VALOR NO CAIXA</label>
+          <input className="value-input" type="number" />
+        </div>
+
+        <div className="field">
+          <label>VALOR DA SANGRIA</label>
+          <input className="value-input" type="number" />
+        </div>
+      </div>
       <p className="totalCount">
         Total Sangria: {""}
         {sangria.toLocaleString("pt-BR", {
