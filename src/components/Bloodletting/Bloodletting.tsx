@@ -24,13 +24,6 @@ export default function Bloodletting() {
           <input className="value-input" type="number" />
         </div>
       </div>
-      <p className="totalCount">
-        Total Sangria: {""}
-        {sangria.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}
-      </p>
       <div className="button-row">
         <button className="button-calc">SANGRIA</button>
         <button onClick={() => handleClear(setSangria)}>LIMPAR</button>
@@ -49,6 +42,13 @@ export default function Bloodletting() {
         <Link to="/">
           <button>RETORNAR</button>
         </Link>
+        <label className="totalCount">
+          Total Sangria: {""}
+          {sangria.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </label>
       </div>
     </div>
   );
