@@ -13,6 +13,7 @@ export default function Main() {
   const pageRef = useRef<HTMLDivElement>(null);
 
   const [total, setTotal] = useState(0);
+
   return (
     <div className="container-main" ref={pageRef}>
       {caixa.map((item, index) => (
@@ -28,6 +29,7 @@ export default function Main() {
             className="value-input"
             type="number"
             onChange={(event) => handleChange(event, index)}
+            placeholder="Ex: 100"
           />
         </div>
       ))}
@@ -38,7 +40,7 @@ export default function Main() {
         </button>
         <button
           className="trigger-button"
-          onClick={() => handleClear(setTotal)}
+          onClick={() => handleClear(setTotal, setTotal)}
         >
           LIMPAR
         </button>
@@ -58,10 +60,10 @@ export default function Main() {
           <button>RETORNAR</button>
         </Link>
       </div>
-      <p className="totalCount">
+      <label className="totalCount">
         Total: {""}
         {total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
-      </p>
+      </label>
     </div>
   );
 }

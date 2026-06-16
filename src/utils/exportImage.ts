@@ -16,3 +16,7 @@ export async function exportElementAsImage(
   link.download = fileName;
   link.click();
 }
+
+export function getFormattedDate() {
+  return new Date().toLocaleDateString("pt-BR");
+}

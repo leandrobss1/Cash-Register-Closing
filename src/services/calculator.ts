@@ -22,7 +22,10 @@ export function handleClick(setTotal: (value: number) => void): void {
   setTotal(total);
 }
 
-export function handleClear(setTotal: (value: number) => void): void {
+export function handleClear(
+  setTotal: (value: number) => void,
+  setAtual: (value: number) => void,
+): void {
   const inputs = document.querySelectorAll(".value-input");
 
   inputs.forEach((input, index) => {
@@ -31,4 +34,26 @@ export function handleClear(setTotal: (value: number) => void): void {
   });
 
   setTotal(0);
+  setAtual(0);
+}
+
+export function calculateSangria(
+  setSangria: (value: number) => void,
+  setAtual: (value: number) => void,
+): void {
+  const valueCaixa = Number(
+    (document.getElementById("valor-caixa") as HTMLInputElement).value,
+  );
+  const valueSangria = Number(
+    (document.getElementById("valor-sangria") as HTMLInputElement).value,
+  );
+
+  const resultSangria = valueCaixa - valueSangria;
+
+  setSangria(valueSangria);
+  setAtual(resultSangria);
+}
+
+export function limitInput(e: React.ChangeEvent<HTMLInputElement>): void {
+  if (e.target.value.length > 4) e.target.value = e.target.value.slice(0, 4);
 }
