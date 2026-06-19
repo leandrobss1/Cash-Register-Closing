@@ -55,5 +55,5 @@ export function calculateSangria(
 }
 
 export function limitInput(e: React.ChangeEvent<HTMLInputElement>): void {
-  if (e.target.value.length > 4) e.target.value = e.target.value.slice(0, 4);
+  if (e.target.value.length > 6) e.target.value = e.target.value.slice(0, 6);
 }
