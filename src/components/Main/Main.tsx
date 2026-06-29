@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { caixa } from "../../data/consumo";
+import { Link } from "react-router";
+import { exportElementAsImage } from "../../utils/exportImage";
+import "./styles.css";
 import {
   handleClick,
   handleChange,
   handleClear,
 } from "../../services/calculator";
-import "./styles.css";
-import { Link } from "react-router";
-import { exportElementAsImage } from "../../utils/exportImage";
 
 export default function Main() {
   const pageRef = useRef<HTMLDivElement>(null);

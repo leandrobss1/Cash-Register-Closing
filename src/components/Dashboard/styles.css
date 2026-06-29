@@ -1,0 +1,8 @@
+.container-dashboard {
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+  justify-content: center;
+
+  flex-direction: column;
+}
